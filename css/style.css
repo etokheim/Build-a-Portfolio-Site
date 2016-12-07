@@ -13,7 +13,10 @@ License URI: All rights reserved
 # Setup
 # Typography
 # Header
-# Mobile version
+# Content
+	## Featured
+# Footer
+# Responsive
 --------------------------------------------------------------*/
 
 
@@ -38,6 +41,26 @@ img {
 	margin: 15px -30px 0;
 }
 
+.container {
+	/*
+		The .rows are overflowing the .container because of a
+		negative margin in order to work around the left and
+		right margin from .col-*
+
+	*/
+	overflow: hidden;
+}
+
+#normal_content_container {
+	background-color: #fff;
+	position: relative;
+	z-index: 100;
+}
+
+hr {
+	margin: 50px -30px;
+	border-top: 3px solid #7d97ad;
+}
 
 /*--------------------------------------------------------------
 # Typography
@@ -83,13 +106,16 @@ header {
 .logo {
 	width: 125px;
 	height: 125px;
-	background-image: url("../img/logo.svg");
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: left;
 
 	/* Gives the logo some padding */
 	border: 30px solid transparent;
+}
+
+.logo_mini {
+	width: 2em;
+	height: 2em;
+	display: inline;
+	margin: 0 .75em;
 }
 
 #header_title {
@@ -105,15 +131,52 @@ header {
 
 
 /*--------------------------------------------------------------
-# Featured
+# Content
 --------------------------------------------------------------*/
+
+/*------------------
+## Featured
+------------------*/
 #hero_img, .featured_work_entry_img {
 	min-width: 100%;
 }
 
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer_container {
+	width: 100%;
+	height: 250px;
+	position: relative;
+}
+
+#footer {
+	width: 100%;
+	height: inherit;
+	position: fixed;
+	background-color: #2d3c49;
+	bottom: 0;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+}
+
+
 /*--------------------------------------------------------------
 # Responsive
 --------------------------------------------------------------*/
+@media (max-width: 992px) {
+	#featured_work {
+		width: 80%;
+		max-width: 500px;
+		margin: 0 auto;
+	}
+}
+
+
 @media (max-width: 768px) {
 	html {
 		font-size: 80%;
