@@ -106,6 +106,7 @@ header {
 .logo {
 	width: 125px;
 	height: 125px;
+	display: block;
 
 	/* Gives the logo some padding */
 	border: 30px solid transparent;
